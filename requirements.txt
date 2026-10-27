@@ -1,0 +1,18 @@
+# Versions used during development (Python 3.12)
+numpy>=2.0
+scipy>=1.17
+matplotlib>=3.10
+scikit-learn>=1.8
+pymoo==0.6.1.6
+shapely>=2.1
+trimesh>=4.11
+pillow
+yourdfpy
+
+# Install for your hardware (CUDA / ROCm / CPU) following the official instructions:
+torch>=2.4
+torch-geometric>=2.6
+
+# Optional
+# cadquery          # STEP export of the snap-fit joint (snap_joint/)
+# opensim           # re-extracting the reference gait (opensim_extraction/)

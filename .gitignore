@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OpenSim models (clone separately, see README)
+opensim_extraction/opensim-models/
+opensim_extraction/Gait2392_Simbody/
+opensim_extraction/all_exported_csv/
+*.mat
+
+# Generated meshes and intermediate video clips
+results/meshes/
+video/act*.mp4
+
+# LaTeX build files
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.synctex.gz

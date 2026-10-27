@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<robot name="theo_jansen_leg">
+
+  <link name="chassis">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/chassis.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_chassis"><color rgba="0.5 0.5 0.5 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0194 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="crank_AC">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/crank_AC.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_crank_AC"><color rgba="1 0.3 0.3 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0075 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_CD">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_CD.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_CD"><color rgba="0.3 0.8 0.3 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0250 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_BD">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_BD.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_BD"><color rgba="0.3 0.3 0.8 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0208 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_BE">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_BE.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_BE"><color rgba="0.8 0.8 0.3 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0196 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_CE">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_CE.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_CE"><color rgba="0.8 0.3 0.8 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0309 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_DF">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_DF.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_DF"><color rgba="0.3 0.8 0.8 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0279 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_BF">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_BF.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_BF"><color rgba="0.5 0.5 0.8 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0201 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_FG">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_FG.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_FG"><color rgba="0.8 0.5 0.3 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0197 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_EG">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_EG.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_EG"><color rgba="0.3 0.5 0.8 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0184 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_GH">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_GH.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_GH"><color rgba="0.9 0.2 0.5 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0329 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+
+  <link name="link_EH">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/link_EH.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="m_link_EH"><color rgba="0.2 0.9 0.5 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.005"/>
+      <origin xyz="0.0245 0 0"/>
+      <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+    </inertial>
+  </link>
+  <joint name="j_crank" type="revolute">
+    <parent link="chassis"/><child link="crank_AC"/>
+    <origin xyz="0 0 0.0030" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_C_CD" type="revolute">
+    <parent link="crank_AC"/><child link="link_CD"/>
+    <origin xyz="0.0150 0 0.0030" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_B_BD" type="revolute">
+    <parent link="chassis"/><child link="link_BD"/>
+    <origin xyz="-0.0380 -0.0078 -0.0030" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_C_CE" type="revolute">
+    <parent link="crank_AC"/><child link="link_CE"/>
+    <origin xyz="0.0150 0 -0.0090" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_B_BE" type="revolute">
+    <parent link="chassis"/><child link="link_BE"/>
+    <origin xyz="-0.0380 -0.0078 0.0090" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_D_DF" type="revolute">
+    <parent link="link_CD"/><child link="link_DF"/>
+    <origin xyz="0.0500 0 0.0060" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_B_BF" type="revolute">
+    <parent link="chassis"/><child link="link_BF"/>
+    <origin xyz="-0.0380 -0.0078 -0.0090" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_F_FG" type="revolute">
+    <parent link="link_DF"/><child link="link_FG"/>
+    <origin xyz="0.0558 0 0.0030" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_E_EG" type="revolute">
+    <parent link="link_BE"/><child link="link_EG"/>
+    <origin xyz="0.0393 0 -0.0210" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_G_GH" type="revolute">
+    <parent link="link_FG"/><child link="link_GH"/>
+    <origin xyz="0.0394 0 -0.0060" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+  <joint name="j_E_EH" type="revolute">
+    <parent link="link_CE"/><child link="link_EH"/>
+    <origin xyz="0.0619 0 0.0030" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28" upper="6.28" effort="1" velocity="6.28"/>
+  </joint>
+
+</robot>

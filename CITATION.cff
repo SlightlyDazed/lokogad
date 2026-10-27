@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+license: MIT
+title: "LOKOGAD — Low-Cost Rehabilitation Exoskeleton via Graph-Assisted Design"
+authors:
+  - family-names: "Laurente Caldas"
+    given-names: "Gabriel A."
+    affiliation: "Universidad Nacional Mayor de San Marcos"
+  - family-names: "Mora Zeña"
+    given-names: "Axel T."
+    affiliation: "Universidad Nacional Mayor de San Marcos"
+  - family-names: "Pantoja Iturrizaga"
+    given-names: "Diego F."
+    affiliation: "Universidad Nacional Mayor de San Marcos"
+  - family-names: "León Vásquez"
+    given-names: "Jimmy F."
+    affiliation: "Universidad Nacional Mayor de San Marcos"
+preferred-citation:
+  type: article
+  title: "LOKOGAD: Design of a Low-Cost Rehabilitation Exoskeleton Based on a Modified Theo Jansen Mechanism for Human Bipedalism via the Graph-Assisted Design Framework"
+  authors:
+    - family-names: "Laurente Caldas"
+      given-names: "Gabriel A."
+    - family-names: "Mora Zeña"
+      given-names: "Axel T."
+    - family-names: "Pantoja Iturrizaga"
+      given-names: "Diego F."
+    - family-names: "León Vásquez"
+      given-names: "Jimmy F."
+  year: 2026
