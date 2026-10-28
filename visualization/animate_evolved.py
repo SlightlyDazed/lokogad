@@ -62,16 +62,16 @@ COLORS = [
 def run_animation(thick=False):
     # ── Dimensiones ───────────────────────────────────────────
     if thick:
-        BAR_WIDTH = 25.0   # mm
-        BAR_THICK = 10.0
-        PIN_R = 8.0
-        LAYER_PITCH = 18.0
-        title_suffix = " (Thick)"
+        BAR_WIDTH = 35.0   # mm
+        BAR_THICK = 14.0
+        PIN_R = 10.0
+        LAYER_PITCH = 22.0
+        title_suffix = " (Extra Thick)"
     else:
-        BAR_WIDTH = 5.0
-        BAR_THICK = 2.0
-        PIN_R = 1.8
-        LAYER_PITCH = 4.0
+        BAR_WIDTH = 25.0   # mm (antes 5.0mm, aumentado para mejor visibilidad)
+        BAR_THICK = 10.0   # mm (antes 2.0mm)
+        PIN_R = 7.5        # mm (antes 1.8mm)
+        LAYER_PITCH = 16.0 # mm (antes 4.0mm)
         title_suffix = ""
 
     # ── Cargar genoma ─────────────────────────────────────────
