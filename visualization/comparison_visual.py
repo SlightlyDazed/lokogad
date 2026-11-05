@@ -73,9 +73,9 @@ def load_mechanism():
 # ══════════════════════════════════════════════════════════════════════════════
 def load_opensim():
     base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "opensim_extraction")
-    foot = torch.load(f"{base}/foot_ref_tensor.pt",  weights_only=False).cpu().numpy()
-    knee = torch.load(f"{base}/knee_ref_tensor.pt",  weights_only=False).cpu().numpy()
-    hip  = torch.load(f"{base}/hip_ref_tensor.pt",   weights_only=False).cpu().numpy()
+    foot = torch.load(f"{base}/foot_ref_tensor.pt",  map_location="cpu", weights_only=False).cpu().numpy()
+    knee = torch.load(f"{base}/knee_ref_tensor.pt",  map_location="cpu", weights_only=False).cpu().numpy()
+    hip  = torch.load(f"{base}/hip_ref_tensor.pt",   map_location="cpu", weights_only=False).cpu().numpy()
     # Plano sagital correcto: X (col 0) = forward, Z (col 2) = vertical/up
     return foot, knee, hip  # (360, 3) cada una
 
@@ -277,7 +277,7 @@ def draw_opensim_panel(ax, foot_raw, knee_raw, hip_raw):
 
     # Anotación del modelo
     ax.text(0.02, 0.98,
-            "Modelo: Rajagopal 2016\n"
+            "Modelo: OpenSim Gait2392\n"
             "Joints: hip\\_r, knee\\_r, foot\\_r\n"
             "Plano: X (forward) vs Z (vertical)\n"
             "360 frames / ciclo de marcha",

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Genera todas las figuras para el INFORME_PROCESO del Proyecto Theo Jansen GAD.
+Las figuras en inglés del artículo se generan con analysis/paper_figures.py.
 Guarda los PNGs en: prepross/figures/
 """
 import os, json
@@ -62,10 +63,10 @@ LABELS  = [f"MN{i+1}" for i in range(13)]
 
 
 # =============================================================================
-# FIGURA 1 — Curva de Convergencia del NSGA-II (4 paneles)
+# FIGURA 1 — Convergencia de la búsqueda topológica (evolution_history.json, 4 paneles)
 # =============================================================================
 fig, axes = plt.subplots(2, 2, figsize=(14, 9))
-fig.suptitle("Figura 1: Convergencia del Algoritmo NSGA-II\n500 Generaciones | Población = 10,000", 
+fig.suptitle("Figura 1: Convergencia de la búsqueda topológica\n500 Generaciones | Población = 5,000", 
              fontsize=14, fontweight='bold', y=1.01)
 
 ax = axes[0, 0]
@@ -83,7 +84,7 @@ ax.plot(gens, foot_err, color=C2, lw=2.2, label="Error Pie")
 ax.plot(gens, knee_err, color=C3, lw=2.2, label="Error Rodilla")
 ax.axhline(0.04974, color=C2, ls='--', lw=1, alpha=0.6, label="Pie final: 4.97%")
 ax.axhline(0.10791, color=C3, ls='--', lw=1, alpha=0.6, label="Rodilla final: 10.79%")
-ax.set_title("Errores de Procrustes por Articulación", fontweight='bold')
+ax.set_title("Errores por articulación (métrica de la búsqueda)", fontweight='bold')
 ax.set_xlabel("Generación"); ax.set_ylabel("RMSD Procrustes")
 ax.legend(fontsize=9)
 
@@ -93,7 +94,7 @@ ax.plot(gens, n_valid, color=C4, lw=2.2)
 ax.axhline(2422, color='gray', ls=':', lw=1, alpha=0.7, label="Gen 1: 2,422 válidas")
 ax.axhline(3941, color=C4, ls='--', lw=1, alpha=0.7, label="Gen 500: 3,941 válidas")
 ax.set_title("Soluciones Físicamente Válidas por Generación\n(sin NaN en los 360°)", fontweight='bold')
-ax.set_xlabel("Generación"); ax.set_ylabel("Nº de soluciones válidas (de 10,000)")
+ax.set_xlabel("Generación"); ax.set_ylabel("Nº de soluciones válidas (de 5,000)")
 ax.legend(fontsize=9); ax.set_ylim(2000, 5000)
 
 ax = axes[1, 1]

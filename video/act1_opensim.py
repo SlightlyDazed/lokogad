@@ -3,7 +3,7 @@
 ═══════════════════════════════════════════════════════════════════════
   ACT 1 — OpenSim Biomechanical Reference
 ═══════════════════════════════════════════════════════════════════════
-  Presenta el modelo musculoesquelético OpenSim Gait10dof:
+  Presenta el modelo musculoesquelético OpenSim Gait2392:
   - Esqueleto sagital animado (cadera→rodilla→tobillo→pie)
   - Trayectorias de keypoints apareciendo progresivamente
   - Títulos cinematográficos
@@ -187,7 +187,7 @@ def animate(frame):
         alpha_t = ease_in_out(min(1.0, frame / (FPS * 1.5)))
         title_text.set_text('OpenSim Gait Analysis')
         title_text.set_alpha(alpha_t)
-        subtitle_text.set_text('Rajagopal 10-DOF Musculoskeletal Model  ·  Sagittal Plane')
+        subtitle_text.set_text('OpenSim Gait2392 Musculoskeletal Model  ·  Sagittal Plane')
         subtitle_text.set_alpha(alpha_t * 0.7)
     elif frame < SKELETON_IN + FPS:
         fade = 1.0 - ease_in_out((frame - TITLE_HOLD) / FPS)

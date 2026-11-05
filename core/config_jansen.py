@@ -133,9 +133,9 @@ def load_reference_trajectories():
     OpenSim: X=adelante, Y=lateral, Z=arriba.
     Mecanismo: x=horizontal, y=vertical.
     """
-    foot_3d = torch.load(REF_FOOT_PATH, weights_only=True).cpu().numpy()  # (360, 3)
-    knee_3d = torch.load(REF_KNEE_PATH, weights_only=True).cpu().numpy()
-    hip_3d  = torch.load(REF_HIP_PATH,  weights_only=True).cpu().numpy()
+    foot_3d = torch.load(REF_FOOT_PATH, map_location="cpu", weights_only=True).cpu().numpy()  # (360, 3)
+    knee_3d = torch.load(REF_KNEE_PATH, map_location="cpu", weights_only=True).cpu().numpy()
+    hip_3d  = torch.load(REF_HIP_PATH,  map_location="cpu", weights_only=True).cpu().numpy()
 
     # Extraer plano sagital (X, Z) y convertir m → mm
     # Hacer relativo a la cadera

@@ -194,12 +194,15 @@ centroid distance, both relative to the hip (crank axis).
 
 ```bash
 python analysis/shape_fit.py --fig results/shape_fit.png
+python analysis/paper_figures.py      # English article figures → results/paper_figures/
 ```
 
 > [!NOTE]
 > The optimisation results in `results/` were produced with the earlier implementation of
 > `_trajectory_error` (rotation applied in the wrong sense, fixed in `core/config_jansen.py`; mirror chosen
-> separately for each joint; raw, non-Fourier references). Re-running the searches is pending.
+> separately for each joint; raw, non-Fourier references). The searches were not re-run: the stored
+> designs are re-evaluated with the corrected metric by `analysis/shape_fit.py`. The errors shown in the
+> convergence plots and in the presentation video are the values computed during the search.
 
 ## Pipeline
 
@@ -253,6 +256,7 @@ run the optimization. To re-extract the gait, clone
 <summary><b>Repository layout</b></summary>
 
 ```
+analysis/        shape/position errors of the stored designs; article figures
 core/            shared modules: configuration and paths, linkage genome (graph), exact kinematic solver
 pipeline/        fase1 dataset → fase2 GAT surrogate → fase3 NSGA-II → fase3 topology evolution → fase4 export
 fabrication/     collision-free Z layers, print-ready STL export, motor-coupling bar, assembly diagram

@@ -162,12 +162,12 @@ arrow_text = fig.text(0.44, 0.5, '', fontsize=40, color=CYAN,
 
 # Data info text
 data_lines = [
-    'Source: OpenSim Gait10dof18musc',
+    'Source: OpenSim Gait2392',
     'Keypoints: Hip · Knee · Ankle · Toe',
     'Plane: Sagittal (X, Z)',
     'Reference frame: Hip-relative',
     f'Points per cycle: {N_CYCLE}',
-    f'Foot stride: {ref_foot[:,0].max()-ref_foot[:,0].min():.0f} mm',
+    f'Foot horizontal excursion: {ref_foot[:,0].max()-ref_foot[:,0].min():.0f} mm',
     f'Knee range Y: {ref_knee[:,1].max()-ref_knee[:,1].min():.0f} mm',
 ]
 data_text_objs = []

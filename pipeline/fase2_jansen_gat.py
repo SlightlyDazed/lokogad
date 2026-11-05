@@ -289,7 +289,7 @@ def main():
 
     ds_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), args.dataset)
     log.info(f"Cargando dataset: {ds_path}")
-    dataset = torch.load(ds_path, weights_only=False)
+    dataset = torch.load(ds_path, map_location="cpu", weights_only=False)
     log.info(f"Dataset: {len(dataset)} muestras")
 
     # Filtrar válidos

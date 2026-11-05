@@ -289,9 +289,9 @@ def animate(frame):
         # Metrics text
         metrics_text.set_text(
             f"Gen {gen_num:>3d}  |  Fitness: {current_gen['best_fitness']:.4f}\n"
-            f"Foot err: {current_gen['best_foot']:.4f}  |  "
+            f"Foot err (search metric): {current_gen['best_foot']:.4f}  |  "
             f"Knee err: {current_gen['best_knee']:.4f}\n"
-            f"Stride: {current_gen['best_stride']:.0f} mm  |  "
+            f"Foot excursion: {current_gen['best_stride']:.0f} mm  |  "
             f"Valid: {current_gen['n_valid']}"
         )
         metrics_text.set_alpha(alpha_e * 0.8)

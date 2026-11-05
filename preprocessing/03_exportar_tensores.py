@@ -67,7 +67,7 @@ def reconstruir_trayectorias(params, H):
 # -----------------------------------------------------------------------------
 
 print("Cargando resultados Fourier...")
-resultados = torch.load(RESULTS_FILE, weights_only=False)
+resultados = torch.load(RESULTS_FILE, map_location="cpu", weights_only=False)
 print(f"  {len(resultados)} configuraciones encontradas")
 
 extracted = []
@@ -216,7 +216,7 @@ archivos = [
 ]
 
 for path in archivos:
-    data = torch.load(path, weights_only=False)
+    data = torch.load(path, map_location="cpu", weights_only=False)
     if isinstance(data, torch.Tensor):
         print(f"  {path:40s}  shape={tuple(data.shape)}  "
               f"dtype={data.dtype}  "

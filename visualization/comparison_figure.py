@@ -156,9 +156,9 @@ def align_to_reference(mech_xy, ref_xy):
 def load_opensim_refs():
     """Carga las trayectorias de referencia OpenSim (XYZ, 360 frames)."""
     base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "opensim_extraction")
-    foot  = torch.load(os.path.join(base, "foot_ref_tensor.pt"),  weights_only=False).cpu().numpy()
-    knee  = torch.load(os.path.join(base, "knee_ref_tensor.pt"),  weights_only=False).cpu().numpy()
-    hip   = torch.load(os.path.join(base, "hip_ref_tensor.pt"),   weights_only=False).cpu().numpy()
+    foot  = torch.load(os.path.join(base, "foot_ref_tensor.pt"), map_location="cpu", weights_only=False).cpu().numpy()
+    knee  = torch.load(os.path.join(base, "knee_ref_tensor.pt"), map_location="cpu", weights_only=False).cpu().numpy()
+    hip   = torch.load(os.path.join(base, "hip_ref_tensor.pt"), map_location="cpu", weights_only=False).cpu().numpy()
     # Usamos X (forward) y Y (vertical) del espacio OpenSim
     # OpenSim: X=forward, Y=up, Z=lateral → plano sagital = X,Y
     return {
