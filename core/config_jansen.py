@@ -166,11 +166,12 @@ def _procrustes_rotation(source, target):
     """
     H = source.T @ target  # (2, 2)
     U, S, Vt = np.linalg.svd(H)
-    d = np.linalg.det(Vt.T @ U.T)
-    D = np.diag([1.0, d])  # Fix reflection
-    R = (U @ D @ Vt).T  # transpose to get source→target
-    # Corrección: R = V D U^T
-    R = Vt.T @ D @ U.T
+    d = np.sign(np.linalg.det(U @ Vt))
+    D = np.diag([1.0, d])  # exclude reflections
+    # With points as rows (source @ R), the optimal rotation is U D V^T.
+    # The previous version returned its transpose (V D U^T), which rotates the
+    # curve by -theta instead of +theta.
+    R = U @ D @ Vt
     return R
 
 

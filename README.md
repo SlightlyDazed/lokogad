@@ -24,7 +24,7 @@
 <td width="50%"><img src="docs/images/act4_mechanism_running.gif" alt="Optimized 12-bar mechanism running, foot trajectory vs. human reference"></td>
 </tr>
 <tr>
-<td align="center"><sub><b>The printed prototype.</b> PLA/PETG bars, one DC motor per leg.</sub></td>
+<td align="center"><sub><b>The printed prototype.</b> PLA/PETG bars, one double-shaft DC gear motor driving both legs (cranks at 180°).</sub></td>
 <td align="center"><sub><b>The optimized mechanism.</b> Foot path (red) against the human reference (dashed).</sub></td>
 </tr>
 </table>
@@ -155,9 +155,9 @@ python visualization/record_gait_gifs.py       # writes the four GIFs to visuali
 
 | Metric | Value |
 |:---|:---:|
-| **Foot** Procrustes error | **4.97 %** |
-| **Knee** Procrustes error | 10.79 % |
-| Combined fitness | 0.11177 |
+| **Foot** shape error | **4.1 %** |
+| **Knee** shape error | 11.6 % |
+| Position error (foot / knee) | 26.5 % / 31.5 % |
 | Horizontal foot excursion (human scale) | 966.35 mm |
 | Final mechanism | 8 pivots · 12 bars · 6 Z-layers |
 
@@ -177,11 +177,29 @@ python visualization/record_gait_gifs.py       # writes the four GIFs to visuali
 
 > [!IMPORTANT]
 > **Scope: kinematics only.**
-> - ✅ The foot follows the human reference path closely (4.97 % Procrustes error); the knee less so (10.79 %).
+> - ✅ The foot follows the human reference path closely (4.1 % shape error); the knee less so (11.6 %).
+> - ℹ️ The mechanism matches the human gait as the mirror image of its simulated layout, which is how the prototype is assembled.
 > - ⚠️ No force, torque or load criteria were optimized.
 > - ⚠️ The prototype was not tested with patients or under load, and its trajectory was not measured.
 >
 > LOKOGAD is a research prototype, **not a medical device**.
+
+### How the errors are computed
+
+`analysis/shape_fit.py` fits each mechanism trajectory onto the Fourier-smoothed human reference
+(`opensim_extraction/*_fourier_tensor.pt`, H = 7): centring, scaling to the reference size, a phase
+shift and a rotation of at most ±30°. The mirror choice is made once per mechanism. Shape error =
+RMS distance after fitting / reference span; position error = centroid distance / reference
+centroid distance, both relative to the hip (crank axis).
+
+```bash
+python analysis/shape_fit.py --fig results/shape_fit.png
+```
+
+> [!NOTE]
+> The optimisation results in `results/` were produced with the earlier implementation of
+> `_trajectory_error` (rotation applied in the wrong sense, fixed in `core/config_jansen.py`; mirror chosen
+> separately for each joint; raw, non-Fourier references). Re-running the searches is pending.
 
 ## Pipeline
 
