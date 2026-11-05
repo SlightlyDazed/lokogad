@@ -314,8 +314,8 @@ def compose_figure(snapshots, angles, labels, descs, foot_xy, ground_mask):
 
     # Leyenda de fase
     patches = [
-        mpatches.Patch(color=GREEN,  label="Fase de apoyo (55% ciclo)"),
-        mpatches.Patch(color=ORANGE, label="Fase aérea (45% ciclo)"),
+        mpatches.Patch(color=GREEN,  label=f"Fase de apoyo ({100*ground_mask.mean():.0f}% ciclo)"),
+        mpatches.Patch(color=ORANGE, label=f"Fase aérea ({100*(1-ground_mask.mean()):.0f}% ciclo)"),
     ]
     ax_traj.legend(handles=patches, loc='upper right', fontsize=8,
                    facecolor=DARK_BG, edgecolor=GRID_CLR, labelcolor=TEXT_CLR)
